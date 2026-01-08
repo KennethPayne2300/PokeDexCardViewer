@@ -5,29 +5,74 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#ff0000"
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"/>
+        android:layout_height="wrap_content"
+        android:text="PokeDex!"
+        android:textColor="#2ffaf4"
+        android:textSize="40sp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:translationX="120dp"
+        android:translationY="50dp"
+        android:translationZ="100dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/nextCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationX="250dp"
+        android:translationY="600dp"
+        app:cardCornerRadius="20dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#a9f821">
+
+            <Button
+                android:id="@+id/nextCardBTN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/outline_arrow_forward_24" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/previousCard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationX="80dp"
+        android:translationY="600dp"
+        app:cardCornerRadius="20dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#a9f821">
+
+            <Button
+                android:id="@+id/previousCardBTN"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/outline_arrow_back_24" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         app:cardCornerRadius="10dp"
-        app:cardElevation="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:translationY="120dp">
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="438dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:background="#F8D030"
             android:padding="16dp">
 
@@ -62,7 +107,8 @@
                 android:gravity="center_horizontal"
                 android:text="Pokemon Name"
                 android:textSize="24sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_marginLeft="40dp"/>
 
             <ImageView
                 android:id="@+id/pokemonImageView"
@@ -107,14 +153,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="Pokemon Description"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:layout_marginHorizontal="20dp"/>
 
                 <TextView
                     android:id="@+id/pokemonLengthTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:text="Length: 1.0 m"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:layout_marginHorizontal="20dp"/>
 
                 <TextView
                     android:id="@+id/pokemonWeightTextView"
@@ -256,12 +304,11 @@
                         android:textSize="14sp"
                         android:textStyle="bold" />
 
-                    <ImageView
-                        android:id="@+id/pokemonRetreatCostImageView"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_gravity="center_horizontal"
-                        android:src="@drawable/ic_launcher_background" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
 
@@ -270,7 +317,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/weaknessResistanceLayout"
-                android:layout_alignParentBottom="true"
+                android:layout_alignParentBottom="false"
                 android:layout_marginTop="8dp"
                 android:gravity="center_horizontal"
                 android:text="Illus. Mitsuhiro Arita  © 1995, 96, 98 Nintendo, Creatures, GAMEFREAK."
@@ -278,29 +325,4 @@
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
-
-    <Button
-        android:id="@+id/nextCard"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginBottom="188dp"
-        android:background="@drawable/outline_arrow_forward_24"
-        android:translationZ="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/cardView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/previousCard"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/previousCard"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="300dp"
-        android:background="@drawable/outline_arrow_back_24"
-        android:translationZ="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/nextCard"
-        app:layout_constraintEnd_toStartOf="@+id/nextCard"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/nextCard" />
 </androidx.constraintlayout.widget.ConstraintLayout>
