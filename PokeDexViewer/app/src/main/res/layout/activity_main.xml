@@ -12,23 +12,30 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
         android:text="PokeDex!"
+        android:textAlignment="center"
         android:textColor="#2ffaf4"
         android:textSize="40sp"
-        android:textAlignment="center"
         android:textStyle="bold"
-        android:translationX="120dp"
-        android:translationY="50dp"
-        android:translationZ="100dp"/>
+        android:translationY="80dp"
+        android:translationZ="100dp"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/nextCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:translationX="250dp"
-        android:translationY="600dp"
         android:layout_margin="20dp"
-        app:cardCornerRadius="20dp">
+        android:translationX="10dp"
+        android:translationY="120dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/previousCard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/previousCard"
+        app:layout_constraintTop_toTopOf="@+id/previousCard">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -47,10 +54,16 @@
         android:id="@+id/previousCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:translationX="80dp"
-        android:translationY="600dp"
         android:layout_margin="20dp"
-        app:cardCornerRadius="20dp">
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="51dp"
+        android:layout_marginEnd="16dp"
+        android:translationX="10dp"
+        android:translationY="120dp"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintEnd_toStartOf="@+id/nextCard"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -69,8 +82,10 @@
         android:id="@+id/cardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:translationY="90dp"
         app:cardCornerRadius="10dp"
-        android:translationY="120dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -91,12 +106,14 @@
                     android:layout_height="wrap_content"
                     android:text="Stage 1"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:background="#59f0f8"/>
 
                 <ImageView
                     android:id="@+id/pokemonStageImageView"
                     android:layout_width="30dp"
-                    android:layout_height="30dp" />
+                    android:layout_height="30dp"
+                    android:background="#48f0f3"/>
             </LinearLayout>
 
             <TextView
@@ -104,12 +121,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="40dp"
                 android:layout_toEndOf="@id/top_left_container"
                 android:gravity="center_horizontal"
                 android:text="Pokemon Name"
                 android:textSize="24sp"
-                android:textStyle="bold"
-                android:layout_marginLeft="40dp"/>
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/pokemonImageView"
@@ -153,25 +170,25 @@
                     android:id="@+id/pokemonDescriptionTextView"
                     android:layout_width="150dp"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:text="Pokemon Description"
-                    android:textSize="14sp"
-                    android:layout_weight="1"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/pokemonLengthTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:text="Length: 1.0 m"
-                    android:textSize="14sp"
-                    android:layout_weight="1"/>
+                    android:textSize="14sp" />
 
                 <TextView
                     android:id="@+id/pokemonWeightTextView"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_weight="1"
                     android:text="Weight: 10.0 kg"
-                    android:textSize="14sp"
-                    android:layout_weight="1"/>
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <TextView
@@ -310,7 +327,6 @@
                         android:id="@+id/retreatCostLayout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
-
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
