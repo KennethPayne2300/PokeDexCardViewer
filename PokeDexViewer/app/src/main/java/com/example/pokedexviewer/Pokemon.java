@@ -10,11 +10,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class Pokemon {
-    private String name, move1, move2, weakness, resistance, description;
-    private Double length, weight;
+    private String name, move1, move2, weakness, resistance, length, description;
+    private Double weight;
     private int move1dmg, move2dmg, retreatCost, stage, health, pokemonImg, stageImg, typeImg;
 
-    public Pokemon(String name, String move1, String move2, String weakness, String resistance, String description, Double length, Double weight, int move1dmg, int move2dmg, int retreatCost, int stage,int health, int pokemonImg, int stageImg, int typeImg){
+    public Pokemon(String name, String move1, String move2, String weakness, String resistance, String description, String length, Double weight, int move1dmg, int move2dmg, int retreatCost, int stage,int health, int pokemonImg, int stageImg, int typeImg){
         this.name=name;
         this.move1=move1;
         this.move2=move2;
@@ -33,7 +33,7 @@ public class Pokemon {
         this.typeImg=typeImg;
     }
 
-    public Pokemon(String name, String move1, String move2, String weakness, String resistance, String description, Double length, Double weight, int move1dmg, int move2dmg, int retreatCost, int stage,int health, int pokemonImg, int typeImg){
+    public Pokemon(String name, String move1, String move2, String weakness, String resistance, String description, String length, Double weight, int move1dmg, int move2dmg, int retreatCost, int stage,int health, int pokemonImg, int typeImg){
         this.name=name;
         this.move1=move1;
         this.move2=move2;
@@ -59,12 +59,12 @@ public class Pokemon {
         } else {
             pokemonStageImage.setVisibility(View.GONE);
         }
-        stageText.setText(stage);
-        hpText.setText(health);
+        stageText.setText(String.format("Stage %d", stage));
+        hpText.setText(String.format("%d hp",health));
         typeImgView.setImageResource(typeImg);
         descriptionText.setText(description);
-        lengthText.setText(String.format("%f",length));
-        weightText.setText(String.format("%f",weight));
+        lengthText.setText(length);
+        weightText.setText(String.format("weight: %.1f lbs",weight));
         move1Text.setText(move1);
         move1dmgText.setText(move1dmg);
         move2Text.setText(move2);
